@@ -7,9 +7,10 @@ class Author
     @posts = []
   end
 
-  def posts
-    @posts
-  end
+   def posts 
+   Post.all.select do |post|
+     post.artist == self 
+   end
 
   def add_post(post)
     @posts << post
